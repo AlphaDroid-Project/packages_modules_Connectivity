@@ -1029,8 +1029,13 @@ public class PermissionMonitor {
         // prohibit rules observe the protected from VPN bit.
         // If removing a UID, we ensure it is not present anywhere in the set first.
         for (final int uid: affectedUids) {
+<<<<<<< HEAD
             if (!hasRestrictedNetworksPermission(uid) && add
                     || !UidRange.containsUid(mVpnLockdownUidRanges.getSet(), uid)) {
+=======
+            if (!hasRestrictedNetworksPermission(uid)
+                    && (add || !UidRange.containsUid(mVpnLockdownUidRanges.getSet(), uid))) {
+>>>>>>> c4f10f5b1a4722a585d260661e8808a19c819521
                 updateLockdownUidRule(uid, add);
             }
         }
